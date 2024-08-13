@@ -10,6 +10,7 @@ async function searchCity(city) {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br&units=metric`);
         const data = await response.json();
         showValues(data);
+        console.log(data);
     } catch (error) {
         console.error('Erro ao buscar a cidade:', error);
     }
@@ -27,9 +28,12 @@ function showValues(data) {
     humidity.querySelector(".text span").innerHTML = data.main.humidity + "%";
     humidity.classList.remove("hidden");
 
+    // Converter a velocidade do vento de m/s para km/h
+    const windSpeedKmH = Math.floor(data.wind.speed * 3.6);
+
     // Exibir vento e remover classe 'hidden'
     const wind = document.querySelector(".wind");
-    wind.querySelector(".text span").innerHTML = Math.floor(data.wind.speed) + " Km/h";
+    wind.querySelector(".text span").innerHTML = windSpeedKmH + " Km/h";
     wind.classList.remove("hidden");
 
     // Atualizar imagem e remover classe 'hidden'
