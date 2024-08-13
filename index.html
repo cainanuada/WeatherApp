@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>ClimaTempo</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <input class="input-search" type="text" placeholder="Informe a localização... ">
+            <button class="fa-solid fa-magnifying-glass-location" onclick="buttonClick()"></button>
+        </div>
+
+        <div class="weather-box hidden">
+            <p class="temperature"></p>
+            <div class="description-container">
+                <img class="img-preview hidden" src="https://openweathermap.org/img/wn/10d@2x.png">
+                <p class="description"></p>
+            </div>
+        </div>
+        
+        <div class="weather-details">
+            <div class="humidity hidden">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Umidade</p>
+                </div>
+            </div>
+            <div class="wind hidden">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Ventos</p>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+<script src="https://kit.fontawesome.com/f3f5724015.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
